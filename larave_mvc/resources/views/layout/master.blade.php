@@ -80,7 +80,9 @@
     </section>
 
     <!-- Main content -->
+    <div style="padding-left: 30px;">
     @yield('content')
+    </div>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->

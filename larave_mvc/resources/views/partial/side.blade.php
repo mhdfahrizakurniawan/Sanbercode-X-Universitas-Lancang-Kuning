@@ -7,6 +7,7 @@
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
+                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
@@ -33,5 +34,11 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="/cast" class="nav-link">
+                <i class="nav-icon fas fa-users"></i>
+                <p>Cast</p>
+            </a>
+           </li>
         </ul>
       </nav>

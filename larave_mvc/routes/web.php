@@ -2,26 +2,20 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\UserController;
-
-//Tugas sabelumnya
-
-// Route::get('/', function () {
-//     return view('index');
-// });
-// Route::get('/form', [HomeController::class, 'index'])->name('index');
-// Route::post('/home', [AuthController::class, 'proses'])->name('home.post');
-// Route::get('/home', [AuthController::class, 'tampil'])->name('home');
-
-//Tugas laravel-template
+use App\Http\Controllers\CastController;
 
 Route::get('/', function () {
-         return view('layout.master');
-     });
-    
-Route::get('/dashboard', [UserController::class, 'index']);
+    return view('layout.master');
+});
 
-Route::get('/tabel', [UserController::class, 'tabels']);
-
-Route::get('/data-tabel', [UserController::class, 'data']);
+Route::get('/dashboard', [HomeController::class, 'index']);
+Route::get('/Tabel', [HomeController::class, 'tabel']);
+Route::get('/Data-tabel', [HomeController::class, 'fahriza']);
+Route::get('/cast', [CastController::class, 'index']);
+Route::get('/cast/create', [CastController::class, 'create']);
+Route::post('/cast', [CastController::class, 'store']);
+Route::get('/cast/{cast_id}', [CastController::class, 'show'])->name('cast.show');
+Route::get('/cast/{cast_id}/edit', [CastController::class, 'edit']);
+Route::put('/cast/{cast_id}', [CastController::class, 'update']);
+Route::delete('/cast/{cast_id}', [CastController::class, 'destroy']);
+Route::resource('cast', CastController::class);
